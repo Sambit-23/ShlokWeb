@@ -2,24 +2,30 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-21T17:41:13 IST" name="Suite" finished-at="2022-03-21T17:41:35 IST" duration-ms="21495">
+  <suite started-at="2022-03-22T17:58:00 IST" name="Suite" finished-at="2022-03-22T17:58:34 IST" duration-ms="34357">
     <groups>
+      <group name="Regression">
+        <method signature="Test1.submit()[pri:0, instance:com.test.shlok.Test1@73700b80]" name="submit" class="com.test.shlok.Test1"/>
+      </group> <!-- Regression -->
+      <group name="Smoke">
+        <method signature="Test1.submit()[pri:0, instance:com.test.shlok.Test1@73700b80]" name="submit" class="com.test.shlok.Test1"/>
+      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2022-03-21T17:41:13 IST" name="Test" finished-at="2022-03-21T17:41:35 IST" duration-ms="21495">
-      <class name="com.test.shlok.Test2">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.Test2@73700b80]" started-at="2022-03-21T17:41:13 IST" name="setup" finished-at="2022-03-21T17:41:21 IST" duration-ms="7762" status="PASS">
+    <test started-at="2022-03-22T17:58:00 IST" name="Test" finished-at="2022-03-22T17:58:34 IST" duration-ms="34357">
+      <class name="com.test.shlok.Test1">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.Test1@73700b80]" started-at="2022-03-22T17:58:00 IST" name="setup" finished-at="2022-03-22T17:58:08 IST" duration-ms="7369" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="submit()[pri:0, instance:com.test.shlok.Test2@73700b80]" started-at="2022-03-21T17:41:21 IST" name="submit" finished-at="2022-03-21T17:41:33 IST" duration-ms="12140" status="PASS">
+        <test-method signature="submit()[pri:0, instance:com.test.shlok.Test1@73700b80]" started-at="2022-03-22T17:58:08 IST" name="submit" finished-at="2022-03-22T17:58:32 IST" duration-ms="24748" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submit -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.test.shlok.Test2@73700b80]" started-at="2022-03-21T17:41:33 IST" name="Teardown" finished-at="2022-03-21T17:41:35 IST" duration-ms="1504" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.test.shlok.Test1@73700b80]" started-at="2022-03-22T17:58:32 IST" name="Teardown" finished-at="2022-03-22T17:58:34 IST" duration-ms="2157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
-      </class> <!-- com.test.shlok.Test2 -->
+      </class> <!-- com.test.shlok.Test1 -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

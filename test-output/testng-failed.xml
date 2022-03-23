@@ -5,8 +5,8 @@
     <classes>
       <class name="com.test.shlok.Test1">
         <methods>
-          <include name="uncheck"/>
           <include name="Teardown"/>
+          <include name="submit"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.test.shlok.Test1 -->

@@ -5,7 +5,9 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -43,9 +45,9 @@ public class BasePage extends ExcelLibrary
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 	}
-	public void fileUpload()
+	public void fileUpload(String path) throws IOException
 	{
-		StringSelection file = new StringSelection("D:\\Shlok Docs\\Teacher Details\\Teacher\\MzE5NzYuanBn.jpg");
+		StringSelection file = new StringSelection(path);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(file, null);
 	}
 	public void alertOK(WebDriver driver)
@@ -60,9 +62,20 @@ public class BasePage extends ExcelLibrary
 	{
 		Actions ac = new Actions(driver);
 		ac.doubleClick(element).perform();
-	
 	}
-	
-		
+	public void pageUpScroll(WebDriver driver) throws InterruptedException
+	{
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		for (int i=0;i<4;i++)
+			{
+				Thread.sleep(1000);
+				js.executeScript("window.scrollBy(0,100)");
+			}
+	}
+	public void ScrollLeft(WebDriver driver, WebElement element)
+	{
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView()",element);
+	}
 	
 }

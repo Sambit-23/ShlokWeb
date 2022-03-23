@@ -8,10 +8,11 @@ import com.generics.shlok.BaseTest;
 import com.pages.shlok.HomePage;
 import com.pages.shlok.Login;
 import com.pages.shlok.ManageRole;
+import com.pages.shlok.ManageSubadmin;
 
 public class Test1 extends BaseTest
 {
-	@Test(priority=1)
+	@Test(groups={"Smoke","Regression"})
 	public void submit() throws IOException, Exception
 	{
 		
@@ -23,11 +24,20 @@ public class Test1 extends BaseTest
 		ManageRole manage = new ManageRole(driver);
 		manage.Compulsoryfield(driver);
 		manage.AccountModule();
+		manage.pageUpScroll(driver);
 		manage.TimetableModule();
 		manage.educationalModule();
 		manage.NewsandEventModule();
 		manage.TransportModule();
 		manage.MerchandiseModule();
+		manage.saveMethod();
+		manage.pageUpScroll(driver);
+		manage.viewRolePage();
+		manage.editEducationalModule();
+		manage.saveChangeMethod();
+	//	ManageSubadmin sub= new ManageSubadmin()
+		
+		
 	}
 	
 	
