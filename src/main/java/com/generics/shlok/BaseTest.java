@@ -26,7 +26,7 @@ public WebDriver driver;
 	@AfterClass
 	public void Teardown() throws InterruptedException
 	{
-		Thread.sleep(1000);
-		driver.quit();
+		//Thread.sleep(1000);
+		//driver.quit();
 	}
 }

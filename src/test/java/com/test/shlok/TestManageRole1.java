@@ -10,7 +10,7 @@ import com.pages.shlok.Login;
 import com.pages.shlok.ManageRole;
 import com.pages.shlok.ManageSubadmin;
 
-public class Test1 extends BaseTest
+public class TestManageRole1 extends BaseTest
 {
 	@Test(groups={"Smoke","Regression"})
 	public void submit() throws IOException, Exception

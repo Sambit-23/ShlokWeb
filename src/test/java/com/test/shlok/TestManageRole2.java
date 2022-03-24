@@ -6,7 +6,7 @@ import com.pages.shlok.HomePage;
 import com.pages.shlok.Login;
 import com.pages.shlok.ManageRole;
 
-public class Test2 extends BaseTest
+public class TestManageRole2 extends BaseTest
 {
 	@Test
 	public void submit() throws Exception

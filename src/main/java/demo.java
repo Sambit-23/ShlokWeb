@@ -24,42 +24,26 @@ public class demo {
 		d.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(1000);
 		d.findElement(By.xpath("(//a[@class='nav-link'])[6]")).click();
-		
-		JavascriptExecutor js = (JavascriptExecutor)d;
-		js.executeScript("window.scrollBy(0,2000)");
-	//	d.findElement(By.xpath("//h5[.='Principal']//i[@class='fa fa-edit pull-right']")).click();
-		
+		WebElement br=d.findElement(By.xpath("(//input[@name='image'])[1]"));
+		br.sendKeys("D:\\Shlok Docs\\Teacher Details\\Teacher\\MzE5NzYuanBn.jpg");
+	
 		WebDriverWait wait= new WebDriverWait(d, 15);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-edit'])[1]")));
 		WebElement scroll = d.findElement(By.xpath("(//i[@class='fa fa-edit'])[1]"));
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
-		for (int i=0;i<9;i++)
-		{ 
-			
-			List <WebElement> list =d.findElements(By.xpath("//tbody[@id='list-list1']"));
-			System.out.println(list.get(0));
-			for (int j =0 ;j<9;j++)
+		JavascriptExecutor js = (JavascriptExecutor)d;
+		js.executeScript("window.scrollBy(0,2000)");
+		
+		List <WebElement> list =d.findElements(By.xpath("//table[@id='example2']"));
+		WebElement el =d.findElement(By.xpath("//a[.='Next']"));
+		for (int j=0; j<10; j++)
+		{
+			for (int i=0; j>=i; i++)
 			{
-			
-			//for (int i =0; i<10;i++)
-			//{
-			WebElement el =d.findElement(By.xpath("//a[.='Next']"));
-			
-			System.out.println(list.get(i).getText());
-			JavascriptExecutor js1=(JavascriptExecutor)d;
-			js1.executeScript("arguments[0].click()", el);
-			//el.click();
+				System.out.println(list.get(j).getText());
+				el.click();
 			}
-//			if (list.get(i).get
-//			{
-//				System.out.println("true");
-//			}
-				
-				
 		}
-				
-	
-	    
-	//}
-}}
+	}
+}

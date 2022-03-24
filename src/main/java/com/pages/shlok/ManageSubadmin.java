@@ -1,7 +1,11 @@
 package com.pages.shlok;
 
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +23,7 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 	@FindBy(id="Branch_IDe")
 	private WebElement branchNameDropdown;
 	
-	@FindBy(id="Main_Role_ID")
+	@FindBy(xpath ="//select[@id='Main_Role_ID']")
 	private WebElement selectAccessRightDropdown;
 	
 	@FindBy(id="Role_ID")
@@ -37,7 +41,7 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 	@FindBy(id="Contact_Phone")
 	private WebElement contactNumberTextfield;
 	
-	@FindBy(id="uploadStudentImage")
+	@FindBy(xpath="(//input[@name='image'])[1]")
 	private WebElement chooseImageFileLink;
 	
 	@FindBy(xpath = "//button[@class='btn btn-success btn-add-admin']")
@@ -86,21 +90,23 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		manageSubadminLink.click();
 		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 1, 0));
 		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
-		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 1));
-		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 2));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
 		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 1));
 		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 4));
-		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 3));
-		String ImagePath = ExcelLibrary.getcellvalue(SubAdminDetails, 1, 5);
-		fileUpload(ImagePath);
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 5));
 		createButton.click();
 	  }
 	
-//	public String checkAddedName() throws IOException
-	//{
-	//	String email =searchTextfield.getAttribute(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 2));
-		//if (email.equals(email))
+
+	public void checkAddedName() throws IOException 
+	{
+		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
+		String search =searchTextfield.getText();
+		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
+		System.out.println(list.get(0).getText());
 		
-	//}
-	
+		
+	}
 }

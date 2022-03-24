@@ -48,7 +48,7 @@ public class BasePage extends ExcelLibrary
 	public void fileUpload(String path) throws IOException
 	{
 		StringSelection file = new StringSelection(path);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(file, null);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(file,null);
 	}
 	public void alertOK(WebDriver driver)
 	{
@@ -66,7 +66,7 @@ public class BasePage extends ExcelLibrary
 	public void pageUpScroll(WebDriver driver) throws InterruptedException
 	{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		for (int i=0;i<4;i++)
+		for (int i=0;i<1;i++)
 			{
 				Thread.sleep(1000);
 				js.executeScript("window.scrollBy(0,100)");
@@ -74,8 +74,13 @@ public class BasePage extends ExcelLibrary
 	}
 	public void ScrollLeft(WebDriver driver, WebElement element)
 	{
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView()",element);
+		JavascriptExecutor js2 = (JavascriptExecutor)driver;
+		js2.executeScript("arguments[0].scrollIntoView()",element);
+	}
+	public void clickjsExecutor(WebElement element, WebDriver driver)
+	{
+		JavascriptExecutor js1 = (JavascriptExecutor)driver;
+		js1.executeScript("arguments[0].click()",element);
 	}
 	
 }

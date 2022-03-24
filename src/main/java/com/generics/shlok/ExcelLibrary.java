@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelLibrary implements AutoConstant
+public class ExcelLibrary extends BaseTest implements AutoConstant
 {
 	public static String getcellvalue(String sheet, int row, int cell) throws IOException
 	{
