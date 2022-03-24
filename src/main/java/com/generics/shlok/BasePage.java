@@ -82,5 +82,11 @@ public class BasePage extends ExcelLibrary
 		JavascriptExecutor js1 = (JavascriptExecutor)driver;
 		js1.executeScript("arguments[0].click()",element);
 	}
-	
+	public void clearTextfield() throws Exception
+	{
+		Robot r = new Robot();
+		r.keyPress(KeyEvent.VK_BACK_SPACE);
+		r.keyRelease(KeyEvent.VK_BACK_SPACE);
+				
+	}
 }

@@ -1,13 +1,11 @@
 package com.pages.shlok;
 
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.generics.shlok.AutoConstant;
 import com.generics.shlok.ExcelLibrary;
 
@@ -50,7 +48,6 @@ public class Login implements AutoConstant
 		{
 			System.out.println("Text is Not Matching");
 		}
-		
 	}
 	public void loginmethodNegative2(WebDriver driver) throws IOException
 	{
@@ -68,5 +65,11 @@ public class Login implements AutoConstant
 			System.out.println("Text is Not Matching");
 		}
 		
+	}	
+	public void clearTextfield()
+	{
+			usernameTextfield.clear();
+			passwordTextfield.clear();
 	}
 }
+
