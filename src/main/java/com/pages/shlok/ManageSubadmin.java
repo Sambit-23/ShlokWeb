@@ -17,8 +17,7 @@ import com.generics.shlok.ExcelLibrary;
 
 public class ManageSubadmin extends BasePage implements AutoConstant
 {
-	@FindBy(xpath="(//a[@class='nav-link'])[6]")
-	private WebElement manageSubadminLink;
+	
 	
 	@FindBy(id="Branch_IDe")
 	private WebElement branchNameDropdown;
@@ -87,7 +86,7 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 	
 	public void createSubAdmin() throws Exception
 	{
-		manageSubadminLink.click();
+	
 		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 1, 0));
 		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
 		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
