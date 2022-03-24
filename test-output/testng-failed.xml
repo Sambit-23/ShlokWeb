@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.test.shlok.TestManageSubAdmin">
+      <class name="com.test.shlok.LoginNegativeScenario">
         <methods>
           <include name="Teardown"/>
-          <include name="dataSubmit"/>
+          <include name="loginWithNegativeScenario"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.test.shlok.TestManageSubAdmin -->
+      </class> <!-- com.test.shlok.LoginNegativeScenario -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

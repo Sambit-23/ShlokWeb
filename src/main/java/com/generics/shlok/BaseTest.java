@@ -12,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest implements AutoConstant
 {
-public WebDriver driver;
+public static WebDriver driver;
 	
 	@BeforeMethod
 	public void setup()

@@ -100,12 +100,19 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 	  }
 	
 
-	public void checkAddedName() throws IOException 
+	public void checkAddedName(WebDriver driver) throws IOException 
 	{
 		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
 		String search =searchTextfield.getText();
 		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
-		System.out.println(list.get(0).getText());
+		String result =list.get(0).getText();
+		
+		if (result.contains("mperry@mail.com"))
+		{
+			System.out.println("Email found");
+		}
+		else 
+			System.out.println("false");
 		
 		
 	}
