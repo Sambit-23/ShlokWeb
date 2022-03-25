@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
 
 import com.generics.shlok.AutoConstant;
 import com.generics.shlok.BasePage;
@@ -84,10 +86,10 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void createSubAdmin() throws Exception
+	public void createSubAdminandCheck() throws Exception
 	{
 	
-		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 1, 0));
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
 		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
 		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
 		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
@@ -96,23 +98,104 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 3));
 		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 5));
 		createButton.click();
-	  }
-	
-
-	public void checkAddedName(WebDriver driver) throws IOException 
-	{
+		Thread.sleep(1000);
 		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
 		String search =searchTextfield.getText();
 		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
 		String result =list.get(0).getText();
 		
-		if (result.contains("mperry@mail.com"))
-		{
-			System.out.println("Email found");
-		}
-		else 
-			System.out.println("false");
+		SoftAssert asst = new SoftAssert();
+		asst.assertEquals(search, result);
+		asst.assertAll();
+	  }
+	
+	public void createSubAdminWithInvalidEmail() throws Exception
+	{
+	
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 9, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 9, 2));
+		String search =searchTextfield.getText();
+		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
+		String result =list.get(0).getText();
 		
+		SoftAssert asst = new SoftAssert();
+		asst.assertEquals(search, result);
+		asst.assertAll();
+	  }
+	public void createSubAdminWithInvalidContactNo() throws Exception
+	{
+	
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 9, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
+		String search =searchTextfield.getText();
+		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
+		String result =list.get(0).getText();
 		
+		SoftAssert asst = new SoftAssert();
+		asst.assertEquals(search, result);
+		asst.assertAll();
+	  }
+	public void createSubAdminWithInvalidPass() throws Exception
+	{
+	
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 4, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 9, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 4, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 4, 2));
+		String search =searchTextfield.getText();
+		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
+		String result =list.get(0).getText();
+		
+		SoftAssert asst = new SoftAssert();
+		asst.assertEquals(search, result);
+		asst.assertAll();
+	  }
+	public void createSubAdminWithInvalidImageFormat() throws Exception
+	{
+	
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 3, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 9, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 4, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 3, 2));
+		String search =searchTextfield.getText();
+		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
+		String result =list.get(0).getText();
+		
+		SoftAssert asst = new SoftAssert();
+		asst.assertEquals(search, result);
+		asst.assertAll();
 	}
+
 }

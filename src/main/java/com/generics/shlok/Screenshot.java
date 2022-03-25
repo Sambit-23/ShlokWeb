@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 
 public class Screenshot implements ITestListener
 {
@@ -26,7 +27,19 @@ public class Screenshot implements ITestListener
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+	}
+	public void onTestSuccess(ITestResult result)
+	{
+		Reporter.log("Status of Execution -" +result.getStatus());
+	}
+	public void onTestStrat(ITestResult result)
+	{
+		Reporter.log("Method name is -" +result.getName());
+		Reporter.log("Test is Starting");
+	}
+	public void onTestFail(ITestResult result)
+	{
+		Reporter.log("Status of Execution -" +result.getStatus());
 	}
 
 }

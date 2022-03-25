@@ -6,10 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+
 import com.generics.shlok.AutoConstant;
+import com.generics.shlok.BasePage;
 import com.generics.shlok.ExcelLibrary;
 
-public class Login implements AutoConstant
+public class LoginPage extends BasePage implements AutoConstant
 {
 	@FindBy(id="Email")
 	private WebElement usernameTextfield;
@@ -23,7 +26,7 @@ public class Login implements AutoConstant
 	@FindBy(xpath ="//button[@type='submit']")
 	private WebElement loginButton;
 	
-	public Login(WebDriver driver)
+	public LoginPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
@@ -32,6 +35,7 @@ public class Login implements AutoConstant
 		usernameTextfield.sendKeys(ExcelLibrary.getcellvalue(Logindata, 1, 0));
 		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(Logindata, 1, 1));
 		loginButton.click();
+		
 	}
 	public void loginmethodNegative1(WebDriver driver) throws IOException
 	{
@@ -58,11 +62,11 @@ public class Login implements AutoConstant
 		String errormessage = error.getText();
 		if (errormessage.equals("Username and password were incorrect"))
 		{
-			System.out.println("Text is Matching");
+			Reporter.log("Text is Matching", true);
 		}
 		else
 		{
-			System.out.println("Text is Not Matching");
+			Reporter.log("Text is Not Matching", true);
 		}
 		
 	}	

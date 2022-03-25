@@ -6,7 +6,7 @@
       <class name="com.test.shlok.TestManageSubAdmin">
         <methods>
           <include name="Teardown"/>
-          <include name="dataSubmit"/>
+          <include name="submitDataWithInvalidEmail"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.test.shlok.TestManageSubAdmin -->

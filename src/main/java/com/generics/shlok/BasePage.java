@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 public class BasePage extends ExcelLibrary
 {
@@ -56,7 +57,7 @@ public class BasePage extends ExcelLibrary
 	}
 	public void fetchTitle(WebDriver driver)
 	{
-		System.out.println(driver.getTitle());
+		Reporter.log(driver.getTitle());
 	}
 	public void doubleclick(WebDriver driver, WebElement element)
 	{

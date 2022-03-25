@@ -181,7 +181,7 @@ public class ManageRole extends BasePage implements AutoConstant
 	}
 	public void Compulsoryfield(WebDriver driver) throws Exception
 	{
-		SelectbyVisibleText(branchnameDropdown,ExcelLibrary.getcellvalue(BranchName, 1, 0));
+		SelectbyVisibleText(branchnameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
 		rolenameTextfield.sendKeys(ExcelLibrary.getcellvalue(ManageRole, 1, 0));
 		manageRoleCheckbox.click();
 		manageSubadminCheckbox.click();

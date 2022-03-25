@@ -5,8 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage 
+import com.generics.shlok.AutoConstant;
+import com.generics.shlok.BasePage;
+
+public class HomePage extends BasePage implements AutoConstant
 {
+	@FindBy(xpath="(//a[@class='nav-link'])[4]")
+	private WebElement creatBranchLink;
+	
 	@FindBy(xpath ="(//a[@class='nav-link'])[5]")
 	private WebElement manageroleLink;
 	
@@ -17,6 +23,12 @@ public class HomePage
 	{
 		PageFactory.initElements(driver, this);
 	}
+	public void creatBranchOpt()
+	{
+		creatBranchLink.click();
+		
+	}
+	
 	public void manageroleOpt()
 	{
 		manageroleLink.click();
