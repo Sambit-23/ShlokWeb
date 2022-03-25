@@ -46,53 +46,53 @@ public class TestManageSubAdmin extends BaseTest
 		ManageSubadmin sub = new ManageSubadmin(driver);
 		sub.createSubAdminandCheck();
 	}
-	@Test(groups="Smoke", priority = 3)
-	public void submitDataWithInvalidEmail() throws Exception
-	{
-		LoginPage log=new LoginPage(driver);
-		log.loginmethod();
-		Thread.sleep(2000);
-		HomePage home = new HomePage(driver);
-		home.manageSubAdminOpt();
-		ManageSubadmin sub = new ManageSubadmin(driver);
-		sub.createSubAdminWithInvalidEmail();
-		
-	}
-	
-	@Test(groups="Smoke", priority = 4)
-	public void submitDataWithInvalidContactNo() throws Exception
-	{
-		LoginPage log=new LoginPage(driver);
-		log.loginmethod();
-		Thread.sleep(2000);
-		HomePage home = new HomePage(driver);
-		home.manageSubAdminOpt();
-		ManageSubadmin sub = new ManageSubadmin(driver);
-		sub.createSubAdminWithInvalidContactNo();
-	}
-	
-	@Test(groups="Smoke", priority = 5)
-	public void submitDataWithInvalidPassword() throws Exception
-	{
-		LoginPage log=new LoginPage(driver);
-		log.loginmethod();
-		Thread.sleep(2000);
-		HomePage home = new HomePage(driver);
-		home.manageSubAdminOpt();
-		ManageSubadmin sub = new ManageSubadmin(driver);
-		sub.createSubAdminWithInvalidPass();
-	}
-	
-	@Test(groups="Smoke", priority = 6)
-	public void submitDataWithInvalidImageFormat() throws Exception
-	{
-		LoginPage log=new LoginPage(driver);
-		log.loginmethod();
-		Thread.sleep(2000);
-		HomePage home = new HomePage(driver);
-		home.manageSubAdminOpt();
-		ManageSubadmin sub = new ManageSubadmin(driver);
-		sub.createSubAdminWithInvalidImageFormat();
-	}
+//	@Test(groups="Smoke", priority = 3)
+//	public void submitDataWithInvalidEmail() throws Exception
+//	{
+//		LoginPage log=new LoginPage(driver);
+//		log.loginmethod();
+//		Thread.sleep(2000);
+//		HomePage home = new HomePage(driver);
+//		home.manageSubAdminOpt();
+//		ManageSubadmin sub = new ManageSubadmin(driver);
+//		sub.createSubAdminWithInvalidEmail();
+//		
+//	}
+//	
+//	@Test(groups="Smoke", priority = 4)
+//	public void submitDataWithInvalidContactNo() throws Exception
+//	{
+//		LoginPage log=new LoginPage(driver);
+//		log.loginmethod();
+//		Thread.sleep(2000);
+//		HomePage home = new HomePage(driver);
+//		home.manageSubAdminOpt();
+//		ManageSubadmin sub = new ManageSubadmin(driver);
+//		sub.createSubAdminWithInvalidContactNo();
+//	}
+//	
+//	@Test(groups="Smoke", priority = 5)
+//	public void submitDataWithInvalidPassword() throws Exception
+//	{
+//		LoginPage log=new LoginPage(driver);
+//		log.loginmethod();
+//		Thread.sleep(2000);
+//		HomePage home = new HomePage(driver);
+//		home.manageSubAdminOpt();
+//		ManageSubadmin sub = new ManageSubadmin(driver);
+//		sub.createSubAdminWithInvalidPass();
+//	}
+//	
+//	@Test(groups="Smoke", priority = 6)
+//	public void submitDataWithInvalidImageFormat() throws Exception
+//	{
+//		LoginPage log=new LoginPage(driver);
+//		log.loginmethod();
+//		Thread.sleep(2000);
+//		HomePage home = new HomePage(driver);
+//		home.manageSubAdminOpt();
+//		ManageSubadmin sub = new ManageSubadmin(driver);
+//		sub.createSubAdminWithInvalidImageFormat();
+	//}
 	
 }

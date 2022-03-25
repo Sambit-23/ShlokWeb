@@ -8,47 +8,67 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite 1</th></tr>
-<tr><td><a href="#t0">Manage SubAdmin</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">5</td><td class="num">181,581</td><td></td><td></td></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">70,207</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite 1</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Manage SubAdmin &#8212; failed</th></tr><tr class="failedeven"><td rowspan="5">com.test.shlok.TestManageSubAdmin</td><td><a href="#m0">submitDataWithInvalidContactNo</a></td><td rowspan="1">1648199996218</td><td rowspan="1">11599</td></tr><tr class="failedeven"><td><a href="#m1">submitDataWithInvalidEmail</a></td><td rowspan="1">1648199961565</td><td rowspan="1">11955</td></tr><tr class="failedeven"><td><a href="#m2">submitDataWithInvalidImageFormat</a></td><td rowspan="1">1648200065262</td><td rowspan="1">12589</td></tr><tr class="failedeven"><td><a href="#m3">submitDataWithInvalidPassword</a></td><td rowspan="1">1648200034472</td><td rowspan="1">13146</td></tr><tr class="failedeven"><td><a href="#m4">submitPositiveData</a></td><td rowspan="1">1648199938088</td><td rowspan="1">10036</td></tr><tr><th colspan="4">Manage SubAdmin &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.test.shlok.TestManageSubAdmin</td><td><a href="#m5">homepage</a></td><td rowspan="1">1648199924950</td><td rowspan="1">4605</td></tr><tr class="passedeven"><td><a href="#m6">login</a></td><td rowspan="1">1648199907192</td><td rowspan="1">5348</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.test.shlok.TestManageSubAdmin</td><td><a href="#m0">submitPositiveData</a></td><td rowspan="1">1648206508431</td><td rowspan="1">24773</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.test.shlok.TestManageSubAdmin</td><td><a href="#m1">homepage</a></td><td rowspan="1">1648206490094</td><td rowspan="1">4820</td></tr><tr class="passedeven"><td><a href="#m2">login</a></td><td rowspan="1">1648206473564</td><td rowspan="1">5051</td></tr></tbody>
 </table>
-<h2>Manage SubAdmin</h2><h3 id="m0">com.test.shlok.TestManageSubAdmin#submitDataWithInvalidContactNo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-	at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidContactNo(ManageSubadmin.java:154)
-	at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidContactNo(TestManageSubAdmin.java:71)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.test.shlok.TestManageSubAdmin#submitDataWithInvalidEmail</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-	at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidEmail(ManageSubadmin.java:132)
-	at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidEmail(TestManageSubAdmin.java:58)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.test.shlok.TestManageSubAdmin#submitDataWithInvalidImageFormat</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-1 Ryan Reynolds iphonep2022@gmail.com Web Admin Admin 2022-03-25 7586541221 Automation Test] but found []
-	at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidImageFormat(ManageSubadmin.java:198)
-	at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidImageFormat(TestManageSubAdmin.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.test.shlok.TestManageSubAdmin#submitDataWithInvalidPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-	at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidPass(ManageSubadmin.java:176)
-	at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidPassword(TestManageSubAdmin.java:83)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.test.shlok.TestManageSubAdmin#submitPositiveData</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
-	expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-	at com.pages.shlok.ManageSubadmin.createSubAdminandCheck(ManageSubadmin.java:109)
+<h2>Default test</h2><h3 id="m0">com.test.shlok.TestManageSubAdmin#submitPositiveData</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//tbody[@id=&apos;list-list1&apos;]//td)[4]&quot;}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-978OTPB&apos;, ip: &apos;192.168.1.11&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Vinayak\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:51768}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4c745db7a7c8570076274ea01f621f51
+*** Element info: {Using=xpath, value=(//tbody[@id=&apos;list-list1&apos;]//td)[4]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.pages.shlok.ManageSubadmin.createSubAdminandCheck(ManageSubadmin.java:105)
 	at com.test.shlok.TestManageSubAdmin.submitPositiveData(TestManageSubAdmin.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.test.shlok.TestManageSubAdmin#homepage</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">SHLOK | Admin Dashboard<br/>Status of Execution -1</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.test.shlok.TestManageSubAdmin#login</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">SHLOK | Admin Dashboard<br/>Status of Execution -1</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.test.shlok.TestManageSubAdmin#homepage</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">SHLOK | Admin Dashboard<br/>Status of Execution -1</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.test.shlok.TestManageSubAdmin#login</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">SHLOK | Admin Dashboard<br/>Status of Execution -1</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

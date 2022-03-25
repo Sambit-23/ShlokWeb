@@ -35,15 +35,19 @@ public class demo {
 		JavascriptExecutor js = (JavascriptExecutor)d;
 		js.executeScript("window.scrollBy(0,2000)");
 		
-		List <WebElement> list =d.findElements(By.xpath("//table[@id='example2']"));
-		WebElement el =d.findElement(By.xpath("//a[.='Next']"));
-		for (int j=0; j<10; j++)
-		{
-			for (int i=0; j>=i; i++)
-			{
-				System.out.println(list.get(j).getText());
-				el.click();
-			}
-		}
-	}
+		List <WebElement> list =d.findElements(By.xpath("//tbody[@id='list-list1']"));
+		System.out.println(list.size());
+		//for ()
+		String name = list.get(0).getText();
+		System.out.println(name);
+//		WebElement el =d.findElement(By.xpath("//a[.='Next']"));
+//		for (int j=0; j<10; j++)
+//		{
+//			for (int i=0; j>=i; i++)
+//			{
+//				System.out.println(list.get(j).getText());
+//				el.click();
+//			}
+//		}
+}
 }

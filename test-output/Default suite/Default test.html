@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Mar 25 14:42:17 IST 2022</td>
+<td>Started on:</td><td>Fri Mar 25 16:37:43 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>79 seconds (79127 ms)</td>
+<tr><td>Total time:</td><td>70 seconds (70207 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,14 +75,33 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.shlok.TestManageSubAdmin.submitDataWithInvalidEmail()'><b>submitDataWithInvalidEmail</b><br>Test class: com.test.shlok.TestManageSubAdmin</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidEmail(ManageSubadmin.java:134)
-	at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidEmail(TestManageSubAdmin.java:58)
+<td title='com.test.shlok.TestManageSubAdmin.submitPositiveData()'><b>submitPositiveData</b><br>Test class: com.test.shlok.TestManageSubAdmin</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//tbody[@id=&apos;list-list1&apos;]//td)[4]&quot;}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-978OTPB&apos;, ip: &apos;192.168.1.11&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Vinayak\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:51768}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4c745db7a7c8570076274ea01f621f51
+*** Element info: {Using=xpath, value=(//tbody[@id=&apos;list-list1&apos;]//td)[4]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.pages.shlok.ManageSubadmin.createSubAdminandCheck(ManageSubadmin.java:105)
+	at com.test.shlok.TestManageSubAdmin.submitPositiveData(TestManageSubAdmin.java:47)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,14 +130,33 @@ No matching records found] but found []
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1931977799", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1931977799'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidEmail(ManageSubadmin.java:134)
-	at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidEmail(TestManageSubAdmin.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1708711928", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1708711928'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//tbody[@id=&apos;list-list1&apos;]//td)[4]&quot;}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-978OTPB&apos;, ip: &apos;192.168.1.11&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Vinayak\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:51768}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4c745db7a7c8570076274ea01f621f51
+*** Element info: {Using=xpath, value=(//tbody[@id=&apos;list-list1&apos;]//td)[4]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.pages.shlok.ManageSubadmin.createSubAdminandCheck(ManageSubadmin.java:105)
+	at com.test.shlok.TestManageSubAdmin.submitPositiveData(TestManageSubAdmin.java:47)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -148,8 +186,8 @@ No matching records found] but found []
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>15</td>
-<td>com.test.shlok.TestManageSubAdmin@4a7f959b</td></tr>
+<td>24</td>
+<td>com.test.shlok.TestManageSubAdmin@429bffaa</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -169,34 +207,21 @@ Status of Execution -1<br/>
 </div>
 </td>
 <td></td>
-<td>4</td>
-<td>com.test.shlok.TestManageSubAdmin@4a7f959b</td></tr>
+<td>5</td>
+<td>com.test.shlok.TestManageSubAdmin@429bffaa</td></tr>
 <tr>
 <td title='com.test.shlok.TestManageSubAdmin.homepage()'><b>homepage</b><br>Test class: com.test.shlok.TestManageSubAdmin<br/>
-<a href="#Output-167550865" onClick='toggleBox("Output-167550865", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-2055472834" onClick='toggleBox("Output-2055472834", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-167550865" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-167550865">
+<a href="#Output-2055472834" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2055472834">
 SHLOK | Admin Dashboard<br/>
 Status of Execution -1<br/>
 </div>
 </td>
 <td></td>
 <td>4</td>
-<td>com.test.shlok.TestManageSubAdmin@4a7f959b</td></tr>
-<tr>
-<td title='com.test.shlok.TestManageSubAdmin.submitPositiveData()'><b>submitPositiveData</b><br>Test class: com.test.shlok.TestManageSubAdmin<br/>
-<a href="#Output-111702054" onClick='toggleBox("Output-111702054", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-111702054" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-111702054">
-Unable to add the Subadmin<br/>
-Status of Execution -1<br/>
-</div>
-</td>
-<td></td>
-<td>11</td>
-<td>com.test.shlok.TestManageSubAdmin@4a7f959b</td></tr>
+<td>com.test.shlok.TestManageSubAdmin@429bffaa</td></tr>
 </table><p>
 </body>
 </html>

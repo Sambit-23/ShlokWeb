@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="2" failed="5" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[SHLOK | Admin Dashboard]]>
@@ -14,25 +14,21 @@
       <![CDATA[Status of Execution -1]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-03-25T14:48:16 IST" name="Suite 1" finished-at="2022-03-25T14:51:17 IST" duration-ms="181581">
+  <suite started-at="2022-03-25T16:37:43 IST" name="Default suite" finished-at="2022-03-25T16:38:53 IST" duration-ms="70207">
     <groups>
       <group name="Smoke">
-        <method signature="TestManageSubAdmin.homepage()[pri:1, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" name="homepage" class="com.test.shlok.TestManageSubAdmin"/>
-        <method signature="TestManageSubAdmin.login()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" name="login" class="com.test.shlok.TestManageSubAdmin"/>
-        <method signature="TestManageSubAdmin.submitDataWithInvalidContactNo()[pri:4, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" name="submitDataWithInvalidContactNo" class="com.test.shlok.TestManageSubAdmin"/>
-        <method signature="TestManageSubAdmin.submitDataWithInvalidEmail()[pri:3, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" name="submitDataWithInvalidEmail" class="com.test.shlok.TestManageSubAdmin"/>
-        <method signature="TestManageSubAdmin.submitDataWithInvalidImageFormat()[pri:6, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" name="submitDataWithInvalidImageFormat" class="com.test.shlok.TestManageSubAdmin"/>
-        <method signature="TestManageSubAdmin.submitDataWithInvalidPassword()[pri:5, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" name="submitDataWithInvalidPassword" class="com.test.shlok.TestManageSubAdmin"/>
-        <method signature="TestManageSubAdmin.submitPositiveData()[pri:2, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" name="submitPositiveData" class="com.test.shlok.TestManageSubAdmin"/>
+        <method signature="TestManageSubAdmin.homepage()[pri:1, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" name="homepage" class="com.test.shlok.TestManageSubAdmin"/>
+        <method signature="TestManageSubAdmin.login()[pri:0, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" name="login" class="com.test.shlok.TestManageSubAdmin"/>
+        <method signature="TestManageSubAdmin.submitPositiveData()[pri:2, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" name="submitPositiveData" class="com.test.shlok.TestManageSubAdmin"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2022-03-25T14:48:16 IST" name="Manage SubAdmin" finished-at="2022-03-25T14:51:17 IST" duration-ms="181581">
+    <test started-at="2022-03-25T16:37:43 IST" name="Default test" finished-at="2022-03-25T16:38:53 IST" duration-ms="70207">
       <class name="com.test.shlok.TestManageSubAdmin">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:48:16 IST" name="setup" finished-at="2022-03-25T14:48:27 IST" duration-ms="10697" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" started-at="2022-03-25T16:37:43 IST" name="setup" finished-at="2022-03-25T16:37:53 IST" duration-ms="10200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:48:27 IST" name="login" finished-at="2022-03-25T14:48:32 IST" duration-ms="5348" status="PASS">
+        <test-method signature="login()[pri:0, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" started-at="2022-03-25T16:37:53 IST" name="login" finished-at="2022-03-25T16:37:58 IST" duration-ms="5051" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[SHLOK | Admin Dashboard]]>
@@ -42,11 +38,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:48:32 IST" name="setup" finished-at="2022-03-25T14:48:44 IST" duration-ms="12383" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" started-at="2022-03-25T16:37:58 IST" name="setup" finished-at="2022-03-25T16:38:10 IST" duration-ms="11461" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="homepage()[pri:1, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:48:44 IST" name="homepage" finished-at="2022-03-25T14:48:49 IST" duration-ms="4605" status="PASS">
+        <test-method signature="homepage()[pri:1, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" started-at="2022-03-25T16:38:10 IST" name="homepage" finished-at="2022-03-25T16:38:14 IST" duration-ms="4820" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[SHLOK | Admin Dashboard]]>
@@ -56,24 +52,49 @@
             </line>
           </reporter-output>
         </test-method> <!-- homepage -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:48:49 IST" name="setup" finished-at="2022-03-25T14:48:58 IST" duration-ms="8527" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" started-at="2022-03-25T16:38:14 IST" name="setup" finished-at="2022-03-25T16:38:28 IST" duration-ms="13510" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="submitPositiveData()[pri:2, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:48:58 IST" name="submitPositiveData" finished-at="2022-03-25T14:49:08 IST" duration-ms="10036" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="submitPositiveData()[pri:2, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" started-at="2022-03-25T16:38:28 IST" name="submitPositiveData" finished-at="2022-03-25T16:38:53 IST" duration-ms="24773" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//tbody[@id='list-list1']//td)[4]"}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-978OTPB', ip: '192.168.1.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Vinayak\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:51768}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4c745db7a7c8570076274ea01f621f51
+*** Element info: {Using=xpath, value=(//tbody[@id='list-list1']//td)[4]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at com.pages.shlok.ManageSubadmin.createSubAdminandCheck(ManageSubadmin.java:109)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//tbody[@id='list-list1']//td)[4]"}
+  (Session info: chrome=99.0.4844.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-978OTPB', ip: '192.168.1.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.82, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\Vinayak\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:51768}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4c745db7a7c8570076274ea01f621f51
+*** Element info: {Using=xpath, value=(//tbody[@id='list-list1']//td)[4]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.pages.shlok.ManageSubadmin.createSubAdminandCheck(ManageSubadmin.java:105)
 at com.test.shlok.TestManageSubAdmin.submitPositiveData(TestManageSubAdmin.java:47)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -105,227 +126,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitPositiveData -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:49:08 IST" name="setup" finished-at="2022-03-25T14:49:21 IST" duration-ms="13225" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="submitDataWithInvalidEmail()[pri:3, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:49:21 IST" name="submitDataWithInvalidEmail" finished-at="2022-03-25T14:49:33 IST" duration-ms="11955" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidEmail(ManageSubadmin.java:132)
-at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidEmail(TestManageSubAdmin.java:58)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitDataWithInvalidEmail -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:49:33 IST" name="setup" finished-at="2022-03-25T14:49:56 IST" duration-ms="22494" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="submitDataWithInvalidContactNo()[pri:4, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:49:56 IST" name="submitDataWithInvalidContactNo" finished-at="2022-03-25T14:50:07 IST" duration-ms="11599" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidContactNo(ManageSubadmin.java:154)
-at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidContactNo(TestManageSubAdmin.java:71)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitDataWithInvalidContactNo -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:50:08 IST" name="setup" finished-at="2022-03-25T14:50:34 IST" duration-ms="26466" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="submitDataWithInvalidPassword()[pri:5, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:50:34 IST" name="submitDataWithInvalidPassword" finished-at="2022-03-25T14:50:47 IST" duration-ms="13146" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-No matching records found] but found []
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidPass(ManageSubadmin.java:176)
-at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidPassword(TestManageSubAdmin.java:83)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitDataWithInvalidPassword -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:50:48 IST" name="setup" finished-at="2022-03-25T14:51:05 IST" duration-ms="17218" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="submitDataWithInvalidImageFormat()[pri:6, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:51:05 IST" name="submitDataWithInvalidImageFormat" finished-at="2022-03-25T14:51:17 IST" duration-ms="12589" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-1 Ryan Reynolds iphonep2022@gmail.com Web Admin Admin 2022-03-25 7586541221 Automation Test] but found []]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [Sl No Profile Name Email ID Access Rights Role Created on Contact Branch Activation Edit
-1 Ryan Reynolds iphonep2022@gmail.com Web Admin Admin 2022-03-25 7586541221 Automation Test] but found []
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at com.pages.shlok.ManageSubadmin.createSubAdminWithInvalidImageFormat(ManageSubadmin.java:198)
-at com.test.shlok.TestManageSubAdmin.submitDataWithInvalidImageFormat(TestManageSubAdmin.java:95)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitDataWithInvalidImageFormat -->
-        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.test.shlok.TestManageSubAdmin@483f6d77]" started-at="2022-03-25T14:51:17 IST" name="Teardown" finished-at="2022-03-25T14:51:17 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:com.test.shlok.TestManageSubAdmin@429bffaa]" started-at="2022-03-25T16:38:53 IST" name="Teardown" finished-at="2022-03-25T16:38:53 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Teardown -->
       </class> <!-- com.test.shlok.TestManageSubAdmin -->
-    </test> <!-- Manage SubAdmin -->
-  </suite> <!-- Suite 1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -101,8 +101,9 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		Thread.sleep(1000);
 		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
 		String search =searchTextfield.getText();
-		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
-		String result =list.get(0).getText();
+		
+		WebElement list =driver.findElement(By.xpath("(//tbody[@id='list-list1']//td)[4]"));
+		String result =list.getText();
 		
 		SoftAssert asst = new SoftAssert();
 		asst.assertEquals(search, result);
@@ -124,9 +125,9 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		Thread.sleep(1000);
 		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 9, 2));
 		String search =searchTextfield.getText();
-		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
-		String result =list.get(0).getText();
-		
+		WebElement list =driver.findElement(By.xpath("(//tbody[@id='list-list1']//td)[4]"));
+		String result =list.getText();
+		System.out.println(result);
 		SoftAssert asst = new SoftAssert();
 		asst.assertEquals(search, result);
 		asst.assertAll();
@@ -146,8 +147,8 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		Thread.sleep(1000);
 		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 6, 2));
 		String search =searchTextfield.getText();
-		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
-		String result =list.get(0).getText();
+		WebElement list = driver.findElement(By.xpath("(//tbody[@id='list-list1']//td)[4]"));
+		String result =list.getText();
 		
 		SoftAssert asst = new SoftAssert();
 		asst.assertEquals(search, result);
@@ -168,8 +169,8 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		Thread.sleep(1000);
 		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 4, 2));
 		String search =searchTextfield.getText();
-		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
-		String result =list.get(0).getText();
+		WebElement list = driver.findElement(By.xpath("(//tbody[@id='list-list1']//td)[4]"));
+		String result =list.getText();
 		
 		SoftAssert asst = new SoftAssert();
 		asst.assertEquals(search, result);
@@ -190,8 +191,8 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		Thread.sleep(1000);
 		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 3, 2));
 		String search =searchTextfield.getText();
-		List <WebElement> list =driver.findElements(By.xpath("//table[@id='example2']"));
-		String result =list.get(0).getText();
+		WebElement list = driver.findElement(By.xpath("(//tbody[@id='list-list1']//td)[4]"));
+		String result =list.getText();
 		
 		SoftAssert asst = new SoftAssert();
 		asst.assertEquals(search, result);

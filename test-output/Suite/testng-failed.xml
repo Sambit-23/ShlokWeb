@@ -6,10 +6,8 @@
       <class name="com.test.shlok.TestManageSubAdmin">
         <methods>
           <include name="Teardown"/>
-          <include name="manageSubAdmin"/>
-          <include name="homepage"/>
-          <include name="login"/>
           <include name="setup"/>
+          <include name="submitPositiveData"/>
         </methods>
       </class> <!-- com.test.shlok.TestManageSubAdmin -->
     </classes>
