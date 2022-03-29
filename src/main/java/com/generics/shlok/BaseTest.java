@@ -7,9 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+@Listeners(com.generics.shlok.Listener.class)
 public class BaseTest implements AutoConstant
 {
 public static WebDriver driver;
@@ -23,10 +24,10 @@ public static WebDriver driver;
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-	@AfterClass
+	@AfterMethod
 	public void Teardown() throws InterruptedException
 	{
-		//Thread.sleep(1000);
-		//driver.quit();
+		Thread.sleep(1000);
+		driver.quit();
 	}
 }

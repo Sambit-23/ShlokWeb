@@ -7,7 +7,7 @@ import com.pages.shlok.HomePage;
 import com.pages.shlok.LoginPage;
 import com.pages.shlok.ManageRole;
 
-@Listeners(com.generics.shlok.Screenshot.class)
+@Listeners(com.generics.shlok.Listener.class)
 public class TestManageRole2 extends BaseTest
 {
 	@Test

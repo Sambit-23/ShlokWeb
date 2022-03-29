@@ -11,7 +11,7 @@ import com.pages.shlok.HomePage;
 import com.pages.shlok.LoginPage;
 import com.pages.shlok.ManageSubadmin;
 
-@Listeners(com.generics.shlok.Screenshot.class)
+@Listeners(com.generics.shlok.Listener.class)
 public class TestManageSubAdmin extends BaseTest
 {
 	@Test(groups = "Smoke")
@@ -21,7 +21,6 @@ public class TestManageSubAdmin extends BaseTest
 		log.loginmethod();
 		Thread.sleep(2000);
 		log.fetchTitle(driver);
-
 	}
 	
 	@Test(groups = "Smoke",priority = 1)
@@ -36,7 +35,20 @@ public class TestManageSubAdmin extends BaseTest
 	}
 	
 	@Test(groups = "Smoke",priority = 2)
-	public void  submitPositiveData() throws Exception
+	public void submitPositiveData() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		Thread.sleep(2000);
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.createSubAdminandCheck();
+		
+	}
+	@Test(groups="Smoke", priority = 3)
+	public void submitDataWithInvalidEmail() throws Exception
 	{
 		LoginPage log=new LoginPage(driver);
 		log.loginmethod();
@@ -44,55 +56,118 @@ public class TestManageSubAdmin extends BaseTest
 		HomePage home = new HomePage(driver);
 		home.manageSubAdminOpt();
 		ManageSubadmin sub = new ManageSubadmin(driver);
-		sub.createSubAdminandCheck();
+		sub.createSubAdminWithInvalidEmail();
 	}
-//	@Test(groups="Smoke", priority = 3)
-//	public void submitDataWithInvalidEmail() throws Exception
-//	{
-//		LoginPage log=new LoginPage(driver);
-//		log.loginmethod();
-//		Thread.sleep(2000);
-//		HomePage home = new HomePage(driver);
-//		home.manageSubAdminOpt();
-//		ManageSubadmin sub = new ManageSubadmin(driver);
-//		sub.createSubAdminWithInvalidEmail();
-//		
-//	}
-//	
-//	@Test(groups="Smoke", priority = 4)
-//	public void submitDataWithInvalidContactNo() throws Exception
-//	{
-//		LoginPage log=new LoginPage(driver);
-//		log.loginmethod();
-//		Thread.sleep(2000);
-//		HomePage home = new HomePage(driver);
-//		home.manageSubAdminOpt();
-//		ManageSubadmin sub = new ManageSubadmin(driver);
-//		sub.createSubAdminWithInvalidContactNo();
-//	}
-//	
-//	@Test(groups="Smoke", priority = 5)
-//	public void submitDataWithInvalidPassword() throws Exception
-//	{
-//		LoginPage log=new LoginPage(driver);
-//		log.loginmethod();
-//		Thread.sleep(2000);
-//		HomePage home = new HomePage(driver);
-//		home.manageSubAdminOpt();
-//		ManageSubadmin sub = new ManageSubadmin(driver);
-//		sub.createSubAdminWithInvalidPass();
-//	}
-//	
-//	@Test(groups="Smoke", priority = 6)
-//	public void submitDataWithInvalidImageFormat() throws Exception
-//	{
-//		LoginPage log=new LoginPage(driver);
-//		log.loginmethod();
-//		Thread.sleep(2000);
-//		HomePage home = new HomePage(driver);
-//		home.manageSubAdminOpt();
-//		ManageSubadmin sub = new ManageSubadmin(driver);
-//		sub.createSubAdminWithInvalidImageFormat();
-	//}
 	
+	@Test(groups="Smoke", priority = 4)
+	public void submitDataWithInvalidContactNo() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.createSubAdminWithInvalidContactNo();
+	}
+	
+	@Test(groups="Smoke", priority = 5)
+	public void submitDataWithInvalidPassword() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.createSubAdminWithInvalidPass();
+	}
+	
+	@Test(groups="Smoke", priority = 6)
+	public void submitDataWithInvalidImageFormat() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.createSubAdminWithInvalidFileFormat();
+	}
+
+	@Test(dependsOnMethods ="submitPositiveData", groups = "smoke", priority=7)
+	public void  editSubadminValidData() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		Thread.sleep(2000);
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.editSubAdminwithValidData();
+		
+	}
+	@Test(groups = "Smoke",priority =8)
+	public void viewSubadminDetails() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		Thread.sleep(2000);
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.viewAllSubAdmin();
+	}
+
+	@Test(groups = "Smoke",priority =10)
+	public void editSubAdminDetailsWithInvalidData() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		Thread.sleep(2000);
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.editSubAdminWithoutselectingRole();
+	}
+	@Test(groups = "Smoke",priority =11)
+	public void editSubAdminDetailsWithInvalidData2() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		Thread.sleep(2000);
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.editSubAdminWithoutselectingAccessright();
+	}
+	@Test(groups = "Smoke",priority =12)
+	public void editSubAdminDetailsActivationToggle() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		Thread.sleep(2000);
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.activatointoggle();
+	}
+	@Test(groups = "Smoke",priority =11)
+	public void editSubAdminDetailsDeactivationToggle() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		Thread.sleep(2000);
+		ManageSubadmin sub = new ManageSubadmin(driver);
+		sub.deactivatointoggle();
+	}
+
 }

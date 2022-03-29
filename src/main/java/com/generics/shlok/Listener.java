@@ -12,7 +12,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-public class Screenshot implements ITestListener
+public class Listener implements ITestListener
 {
 	public void onTestFailure(ITestResult result)
 	{
@@ -30,6 +30,7 @@ public class Screenshot implements ITestListener
 	}
 	public void onTestSuccess(ITestResult result)
 	{
+		Reporter.log("Test case is Pass", true);
 		Reporter.log("Status of Execution -" +result.getStatus());
 	}
 	public void onTestStrat(ITestResult result)
@@ -39,7 +40,7 @@ public class Screenshot implements ITestListener
 	}
 	public void onTestFail(ITestResult result)
 	{
-		Reporter.log("Status of Execution -" +result.getStatus());
+		Reporter.log("TestCase is Fail",true);
 	}
 
 }

@@ -58,6 +58,7 @@ public class BasePage extends ExcelLibrary
 	public void fetchTitle(WebDriver driver)
 	{
 		Reporter.log(driver.getTitle());
+
 	}
 	public void doubleclick(WebDriver driver, WebElement element)
 	{
@@ -67,10 +68,10 @@ public class BasePage extends ExcelLibrary
 	public void pageUpScroll(WebDriver driver) throws InterruptedException
 	{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		for (int i=0;i<1;i++)
+		//for (int i=0;i<2;i++)
 			{
-				Thread.sleep(1000);
-				js.executeScript("window.scrollBy(0,100)");
+				Thread.sleep(2000);
+				js.executeScript("window.scrollBy(900,700)");
 			}
 	}
 	public void ScrollLeft(WebDriver driver, WebElement element)

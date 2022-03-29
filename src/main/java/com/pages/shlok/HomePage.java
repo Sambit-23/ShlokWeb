@@ -26,7 +26,6 @@ public class HomePage extends BasePage implements AutoConstant
 	public void creatBranchOpt()
 	{
 		creatBranchLink.click();
-		
 	}
 	
 	public void manageroleOpt()
@@ -37,5 +36,6 @@ public class HomePage extends BasePage implements AutoConstant
 	public void manageSubAdminOpt()
 	{
 		manageSubadminLink.click();
+		
 	}
 }

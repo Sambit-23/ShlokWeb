@@ -9,7 +9,7 @@ import com.pages.shlok.LoginPage;
 import com.pages.shlok.ManageRole;
 import com.pages.shlok.ManageSubadmin;
 
-@Listeners(com.generics.shlok.Screenshot.class)
+@Listeners(com.generics.shlok.Listener.class)
 public class TestManageRole1 extends BaseTest
 {
 	@Test(groups={"Smoke","Regression"})
