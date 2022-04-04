@@ -1,9 +1,23 @@
 package com.pages.shlok;
 
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
+
 import com.generics.shlok.AutoConstant;
 import com.generics.shlok.BasePage;
 import com.generics.shlok.ExcelLibrary;
@@ -89,9 +103,9 @@ public class ManageRole extends BasePage implements AutoConstant
 	private WebElement manageStoreCheckbox;
 	
 	@FindBy(xpath = "//button[@class='btn btn-success addRole']")
-	private WebElement saveButton;
-	
-	@FindBy(xpath ="//h5[.='Admin']//i[@class='fa fa-edit pull-right']") //view role
+	private WebElement addButton;
+
+	@FindBy(xpath ="//i[@class='fa fa-edit pull-right']") //view role
 	private WebElement editButton;
 	
 	@FindBy(xpath = "//input[@id='RoleName']")
@@ -172,34 +186,26 @@ public class ManageRole extends BasePage implements AutoConstant
 	@FindBy(xpath = "//button[.='Save Changes']")
 	private WebElement saveChangeButton;
 	
-	@FindBy(xpath = "//h5[.='Principal']//i[@class='fa fa-trash  pull-right']") //view role
+	@FindBy(xpath = "(//i[@class='fa fa-trash  pull-right'])") //view role
 	private WebElement DeleteButton;
 	
 	public ManageRole(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
-	public void Compulsoryfield(WebDriver driver) throws Exception
+	
+	public void creatRoleWithValidData() throws Exception
 	{
-		SelectbyVisibleText(branchnameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
-		rolenameTextfield.sendKeys(ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		SelectbyVisibleText(branchnameDropdown, ExcelLibrary.getcellvalue(BranchName, 2, 0));
+		rolenameTextfield.sendKeys(ExcelLibrary.getcellvalue(ManageRole, 2, 0));
 		manageRoleCheckbox.click();
 		manageSubadminCheckbox.click();
-		manageClassSectionCheckbox.click();
-	}
-	public void AccountModule()
-	{
 		manageFeeCheckbox.click();
 		fundraiserCheckbox.click();
-	}
-	public void TimetableModule()
-	{
 		manageClassTimetableCheckbox.click();
-	}
-	public void educationalModule()
-	{
 		manageBranchCheckbox.click();
 		manageStudentCheckbox.click();
+		manageClassSectionCheckbox.click();
 		manageSubjectCheckbox.click();
 		manageTeacherCheckbox.click();
 		manageAttendanceCheckbox.click();
@@ -207,72 +213,175 @@ public class ManageRole extends BasePage implements AutoConstant
 		manageProtocolCheckbox.click();
 		manageNotificationCheckbox.click();
 		digitalLibraryCheckbox.click();
-		permissionFormsCheckbox.click();	
-	}
-	public void NewsandEventModule()
-	{
+		permissionFormsCheckbox.click();
 		manageEventCheckbox.click();
 		manageGalleryCheckbox.click();
 		manageAchievementCheckbox.click();
 		manageRepresentativesCheckbox.click();
 		manageHolidaysCheckbox.click();
 		manageNewsletterCheckbox.click();
-	}
-	public void TransportModule()
-	{
 		manageTransportCheckbox.click();
-	}
-	public void MerchandiseModule() 
-	{
 		manageStoreCheckbox.click();
-	}
-	public void saveMethod()
-	{
-		saveButton.click();
+		addButton.click();
+		
+		Thread.sleep(1000);
+		SoftAssert asset = new SoftAssert();
+		WebElement el = driver.findElement(By.xpath("//h5[@class='card-header']")); //***
+		String details = el.getText();
+		Reporter.log(details);
+		if (details.contains(ExcelLibrary.getcellvalue(ManageRole, 2, 0)))
+		{
+		}
+		else 
+		{
+			asset.fail("Test case fail");
+			asset.assertAll();
+		}
 	}
 	
-	public void uncheckAll()
+	public void editRoleWithoutSelectingModule() throws Exception
 	{
+		String tempName = "Ram";
+		branchnameDropdown.sendKeys(ExcelLibrary.getcellvalue(BranchName, 2, 0));
+		rolenameTextfield.sendKeys(tempName);
 		manageRoleCheckbox.click();
 		manageSubadminCheckbox.click();
-		manageClassSectionCheckbox.click();
-		manageFeeCheckbox.click();
-		fundraiserCheckbox.click();
-		manageBranchCheckbox.click();
-		manageStudentCheckbox.click();
-		manageSubjectCheckbox.click();
-		manageTeacherCheckbox.click();
-		manageAttendanceCheckbox.click();
-		manageExamCheckbox.click();
-		manageProtocolCheckbox.click();
-		manageNotificationCheckbox.click();
-		digitalLibraryCheckbox.click();
-		permissionFormsCheckbox.click();	
-	}
-	
-	//====================================== EDIT=========================================//
-	
-	public void viewRolePage() throws Exception
-	{
-		editButton.click();
-		editRoleNameTextfield.sendKeys(ExcelLibrary.getcellvalue(ManageRole,2,0));
+		addButton.click();
+		Thread.sleep(1000);
+		
+		branchnameDropdown.sendKeys(ExcelLibrary.getcellvalue(BranchName, 2, 0));
+		Thread.sleep(1000);
+		List <WebElement> role =driver.findElements(By.xpath("//h5[@class='card-header']"));
+		waitforListofWebElement(driver, role);
+		String xpath = "";
+		for (int i =1; i< role.size();i++)
+		{
+			String rol = role.get(i).getText();
+			
+			if(role.get(i).getText().equalsIgnoreCase(tempName));
+			{
+				xpath = "(//i[@class='fa fa-edit pull-right'])" + "["+ i +"]";
+				break ;
+			}
+		}
+		driver.findElement(By.xpath(xpath)).click();
+		
+		editRoleNameTextfield.clear();
+		editRoleNameTextfield.sendKeys(ExcelLibrary.getcellvalue(ManageRole, 4, 0));
 		editManageRoleCheckbox.click();
 		editManageSubAdminCheckbox.click();
-		editManageClassSectionCheckbox.click();
+		
+		WebElement text = driver.findElement(By.xpath("//button[@type='button']"));
+		String Actualtext = text.getText();
+		String Expexted = driver.getTitle();
+		
+		saveChangeButton.click();
+		
+		SoftAssert as = new SoftAssert();
+		as.assertEquals(Actualtext, Expexted);
+		as.assertAll();
 	}
-	public void editAccountModule()
+	
+	public void createRoleWithoutAnyModule() throws IOException, Exception
 	{
+		SelectbyVisibleText(branchnameDropdown, ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		rolenameTextfield.sendKeys(ExcelLibrary.getcellvalue(ManageRole, 2, 0));
+		addButton.click();
+		
+		Thread.sleep(1000);
+		SoftAssert asset = new SoftAssert();
+		WebElement el = driver.findElement(By.xpath("//h5[@class='card-header']")); //***
+		String details = el.getText();
+		Reporter.log(details);
+		if (details.contains(ExcelLibrary.getcellvalue(ManageRole, 2, 0)))
+		{
+		}
+		else 
+		{
+			asset.fail("Test case fail");
+			asset.assertAll();
+		}
+	}
+	public void createRoleWithoutSelectingBranch() throws IOException, Exception
+	{
+		List<WebElement> act = driver.findElements(By.xpath("//h5[@class='card-header']")); //***
+		int Actual = act.size();
+		System.out.println(Actual);
+		
+		rolenameTextfield.sendKeys(ExcelLibrary.getcellvalue(ManageRole, 2, 0));
+		manageRoleCheckbox.click();
+		manageSubadminCheckbox.click();
+		manageFeeCheckbox.click();
+		fundraiserCheckbox.click();
+		manageClassTimetableCheckbox.click();
+		manageBranchCheckbox.click();
+		manageStudentCheckbox.click();
+		addButton.click();
+		List<WebElement> exp = driver.findElements(By.xpath("//h5[@class='card-header']")); //***
+		int Expected = exp.size();
+		System.out.println(Expected);
+		
+		SoftAssert as = new SoftAssert();
+		as.assertNotEquals(Actual, Expected);
+		Reporter.log("Role is Not Added");
+		as.assertAll();
+	}
+	public void createRoleWithoutSelectingRole() throws IOException, Exception
+	{
+		SelectbyVisibleText(branchnameDropdown, ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		Thread.sleep(1000);
+		
+		List<WebElement> act = driver.findElements(By.xpath("//h5[@class='card-header']")); //***
+		int Actual = act.size();
+		System.out.println(Actual);
+		
+		manageRoleCheckbox.click();
+		manageSubadminCheckbox.click();
+		manageFeeCheckbox.click();
+		fundraiserCheckbox.click();
+		manageClassTimetableCheckbox.click();
+		manageBranchCheckbox.click();
+		manageStudentCheckbox.click();
+		addButton.click();
+		
+		List<WebElement> exp = driver.findElements(By.xpath("//h5[@class='card-header']")); //***
+		int Expected = exp.size();
+		System.out.println(Expected);
+		
+		SoftAssert as = new SoftAssert();
+		as.assertNotEquals(Actual, Expected);
+		Reporter.log("Role is Not Added");
+		as.assertAll();
+	}
+	public void editRoleWithValidData() throws Exception
+	{
+		branchnameDropdown.sendKeys(ExcelLibrary.getcellvalue(BranchName, 2, 0));
+		Thread.sleep(1000);
+		List <WebElement> role =driver.findElements(By.xpath("//h5[@class='card-header']"));
+		waitforListofWebElement(driver, role);
+		String xpath = "";
+		for (int i =1; i< role.size();i++)
+		{
+			String rol = role.get(i).getText();
+			
+			if(role.get(i).getText().equalsIgnoreCase("principal"));
+			{
+				xpath = "(//i[@class='fa fa-edit pull-right'])" + "["+ i +"]";
+				break ;
+			}
+		}
+		driver.findElement(By.xpath(xpath)).click();
+		
+		editRoleNameTextfield.clear();
+		editRoleNameTextfield.sendKeys(ExcelLibrary.getcellvalue(ManageRole, 3, 0));
+		editManageRoleCheckbox.click();
+		editManageSubAdminCheckbox.click();
 		editManageFeeCheckbox.click();
 		editFundraiserCheckbox.click();
-	}
-	public void editTimetableModule()
-	{
 		editManageClassTimeTableCheckbox.click();
-	}
-	public void editEducationalModule()
-	{
 		editManageBranchCheckbox.click();
 		editManageStudentCheckbox.click();
+		editManageClassSectionCheckbox.click();
 		editManageSubjectCheckbox.click();
 		editManageTeacherCheckbox.click();
 		editManageAttendanceCheckbox.click();
@@ -280,28 +389,113 @@ public class ManageRole extends BasePage implements AutoConstant
 		editManageProtocolCheckbox.click();
 		editManageNotificationCheckbox.click();
 		editDigitalLibraryCheckbox.click();
-		editPermissionFormsCheckbox.click();	
-	}
-	public void editNewsandEventModule()
-	{
+		editPermissionFormsCheckbox.click();
 		editManageEventCheckbox.click();
 		editManageGalleryCheckbox.click();
 		editManageAchievementCheckbox.click();
 		editManageRepresentativeCheckbox.click();
 		editManageHolidayCheckbox.click();
 		editManageNewsletterCheckbox.click();
-	}
-	public void editTransportModule()
-	{
 		editManageTransportCheckbox.click();
-	}
-	public void editMerchandiseModule() 
-	{
 		editManageStoreCheckbox.click();
-	}
-	public void saveChangeMethod()
-	{
+		
+		WebElement text = driver.findElement(By.xpath("//button[@type='button']"));
+		String Actualtext = text.getText();
+		
 		saveChangeButton.click();
+		Thread.sleep(1000);
+		String Expexted = driver.getTitle();
+		
+		SoftAssert as = new SoftAssert();
+		as.assertNotEquals(Actualtext, Expexted);
+		as.assertAll();
 	}
 	
+	public void editRoleWithoutRoleName() throws Exception
+	{
+		branchnameDropdown.sendKeys(ExcelLibrary.getcellvalue(BranchName, 2, 0));
+		Thread.sleep(1000);
+		List <WebElement> role = driver.findElements(By.xpath("//h5[@class='card-header']"));
+		waitforListofWebElement(driver, role);
+		String xpath = "";
+		for (int i = 1; i< role.size();i++)
+		{
+			String rol = role.get(i).getText();
+			if(role.get(i).getText().equalsIgnoreCase("principal"));
+			{
+				xpath = "(//i[@class='fa fa-edit pull-right'])" + "["+ i +"]";
+				break ;
+			}
+		}
+		driver.findElement(By.xpath(xpath)).click();
+		
+		editRoleNameTextfield.clear();
+		editManageRoleCheckbox.click();
+		editManageSubAdminCheckbox.click();
+		editManageFeeCheckbox.click();
+		editFundraiserCheckbox.click();
+		editManageClassTimeTableCheckbox.click();
+		editManageBranchCheckbox.click();
+		editManageStudentCheckbox.click();
+		editManageClassSectionCheckbox.click();
+		editManageSubjectCheckbox.click();
+		editManageTeacherCheckbox.click();
+		editManageAttendanceCheckbox.click();
+		editManageExamCheckbox.click();
+		editManageProtocolCheckbox.click();
+		editManageNotificationCheckbox.click();
+		editDigitalLibraryCheckbox.click();
+		editPermissionFormsCheckbox.click();
+		editManageEventCheckbox.click();
+		editManageGalleryCheckbox.click();
+		editManageAchievementCheckbox.click();
+		editManageRepresentativeCheckbox.click();
+		editManageHolidayCheckbox.click();
+		editManageNewsletterCheckbox.click();
+		editManageTransportCheckbox.click();
+		editManageStoreCheckbox.click();
+		
+		WebElement text = driver.findElement(By.xpath("//button[@type='button']"));
+		String Actualtext = text.getText();
+		String Expexted = driver.getTitle();
+		
+		saveChangeButton.click();
+		
+		SoftAssert as = new SoftAssert();
+		as.assertEquals(Actualtext, Expexted);
+		as.assertAll();
+	}
+	
+	public void deleteRole() throws Exception
+	{
+		String tempName = "Ram";
+		
+		branchnameDropdown.sendKeys(ExcelLibrary.getcellvalue(BranchName, 2, 0));
+		Thread.sleep(1000);
+		List <WebElement> role =driver.findElements(By.xpath("//h5[@class='card-header']"));
+		int actual = role.size();
+		waitforListofWebElement(driver, role);
+		String xpath = "";
+		for (int i =1; i< role.size();i++)
+		{
+			String rol = role.get(i).getText();
+			
+			if(role.get(i).getText().equalsIgnoreCase(tempName));
+			{
+				xpath = "(//i[@class='fa fa-trash  pull-right'])" + "["+ i +"]";
+				break ;
+			}
+		}
+		driver.findElement(By.xpath(xpath)).click();
+		alertOK(driver);
+		
+		Thread.sleep(1000);
+		
+		List <WebElement> role2 =driver.findElements(By.xpath("//h5[@class='card-header']"));
+		int expected = role2.size();
+		
+		SoftAssert as = new SoftAssert();
+		as.assertNotEquals(actual, expected);
+		as.assertAll();	
+	}
 }

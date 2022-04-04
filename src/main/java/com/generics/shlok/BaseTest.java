@@ -1,5 +1,6 @@
 package com.generics.shlok;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -22,7 +23,7 @@ public static WebDriver driver;
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10L));
 	}
 	@AfterMethod
 	public void Teardown() throws InterruptedException

@@ -5,16 +5,9 @@
     <classes>
       <class name="com.test.shlok.TestManageSubAdmin">
         <methods>
-          <include name="submitDataWithInvalidPassword"/>
+          <include name="editSubAdminDetailsWithoutUserName"/>
           <include name="Teardown"/>
-          <include name="submitDataWithInvalidContactNo"/>
-          <include name="submitDataWithInvalidEmail"/>
-          <include name="editSubAdminDetailsWithInvalidData2"/>
-          <include name="submitDataWithInvalidImageFormat"/>
-          <include name="editSubadminValidData"/>
-          <include name="editSubAdminDetailsWithInvalidData"/>
           <include name="setup"/>
-          <include name="submitPositiveData"/>
         </methods>
       </class> <!-- com.test.shlok.TestManageSubAdmin -->
     </classes>

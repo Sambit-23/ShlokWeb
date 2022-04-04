@@ -6,12 +6,20 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+import java.util.NoSuchElementException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.testng.Assert;
 import org.testng.Reporter;
 
 public class BasePage extends ExcelLibrary
@@ -21,6 +29,13 @@ public class BasePage extends ExcelLibrary
 		Select sel = new Select(element);
 		sel.selectByVisibleText(Text);
 	}
+	
+	public void SelectbyVisibleint(WebElement element)
+	{
+		Select sel = new Select(element);
+		sel.getFirstSelectedOption();
+	}
+	
 	public void mousehover(WebDriver driver, WebElement element)
 	{
 		Actions act = new Actions(driver);
@@ -68,13 +83,13 @@ public class BasePage extends ExcelLibrary
 	public void pageUpScroll(WebDriver driver) throws InterruptedException
 	{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		//for (int i=0;i<2;i++)
+		for (int i=0;i<3;i++)
 			{
 				Thread.sleep(2000);
-				js.executeScript("window.scrollBy(900,700)");
+				js.executeScript("window.scrollBy(500,500)");
 			}
 	}
-	public void ScrollLeft(WebDriver driver, WebElement element)
+	public void ScrollToView(WebDriver driver, WebElement element)
 	{
 		JavascriptExecutor js2 = (JavascriptExecutor)driver;
 		js2.executeScript("arguments[0].scrollIntoView()",element);
@@ -84,11 +99,47 @@ public class BasePage extends ExcelLibrary
 		JavascriptExecutor js1 = (JavascriptExecutor)driver;
 		js1.executeScript("arguments[0].click()",element);
 	}
-	public void clearTextfield() throws Exception
+	public void clearMethod(WebElement element)
 	{
-		Robot r = new Robot();
-		r.keyPress(KeyEvent.VK_BACK_SPACE);
-		r.keyRelease(KeyEvent.VK_BACK_SPACE);
-				
+		element.clear();
+	}
+	public void waitforElement(WebDriver driver, String text)
+	{
+		Wait<WebDriver> wait = new FluentWait <> (driver)	
+				.withTimeout(Duration.ofSeconds(20L))
+				.pollingEvery(Duration.ofSeconds(2L))
+				.ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.titleIs(text));
+	}
+	public void waitforListofWebElement(WebDriver driver, List<WebElement> element)
+	{
+		Wait<WebDriver> wait = new FluentWait <> (driver)	
+				.withTimeout(Duration.ofSeconds(20L))
+				.pollingEvery(Duration.ofSeconds(2L))
+				.ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOfAllElements(element));
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,13 +6,16 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.test.shlok.TestManageSubAdmin">
+      <class name="com.test.shlok.TestLogin">
         <methods>
           <include name="Teardown"/>
+          <include name="negativeTC_1"/>
+          <include name="negativeTC_4"/>
+          <include name="negativeTC_3"/>
           <include name="setup"/>
-          <include name="submitPositiveData"/>
+          <include name="negativeTC_5"/>
         </methods>
-      </class> <!-- com.test.shlok.TestManageSubAdmin -->
+      </class> <!-- com.test.shlok.TestLogin -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

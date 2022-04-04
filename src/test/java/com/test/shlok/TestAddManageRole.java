@@ -7,15 +7,12 @@ import com.generics.shlok.BaseTest;
 import com.pages.shlok.HomePage;
 import com.pages.shlok.LoginPage;
 import com.pages.shlok.ManageRole;
-import com.pages.shlok.ManageSubadmin;
-
 @Listeners(com.generics.shlok.Listener.class)
-public class TestManageRole1 extends BaseTest
+public class TestAddManageRole extends BaseTest
 {
-	@Test(groups={"Smoke","Regression"})
-	public void submit() throws IOException, Exception
+	@Test(priority=1)
+	public void positiveTC() throws IOException, Exception
 	{
-		
 		LoginPage log=new LoginPage(driver);
 		log.loginmethod();
 		Thread.sleep(2000);
@@ -23,24 +20,47 @@ public class TestManageRole1 extends BaseTest
 		HomePage home = new HomePage(driver);
 		home.manageroleOpt();
 		
-		ManageRole manage = new ManageRole(driver);
-		manage.Compulsoryfield(driver);
-		manage.AccountModule();
-		manage.pageUpScroll(driver);
-		manage.TimetableModule();
-		manage.educationalModule();
-		manage.NewsandEventModule();
-		manage.TransportModule();
-		manage.MerchandiseModule();
-		manage.saveMethod();
-		manage.pageUpScroll(driver);
-		manage.viewRolePage();
-		manage.editEducationalModule();
-		manage.saveChangeMethod();
-	//	ManageSubadmin sub= new ManageSubadmin()
-		
-		
+		ManageRole  role = new ManageRole(driver);
+		role.creatRoleWithValidData();		
 	}
-	
+	@Test(priority=2)
+	public void negativeTC_1() throws IOException, Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		
+		HomePage home = new HomePage(driver);
+		home.manageroleOpt();
+		
+		ManageRole  role = new ManageRole(driver);
+		role.createRoleWithoutAnyModule();
+	}
+	@Test(priority=3)
+	public void negativeTC_2() throws IOException, Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		
+		HomePage home = new HomePage(driver);
+		home.manageroleOpt();
+		
+		ManageRole  role = new ManageRole(driver);
+		role.createRoleWithoutSelectingBranch();
+	}
+	@Test(priority=4)
+	public void negativeTC_3() throws IOException, Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		
+		HomePage home = new HomePage(driver);
+		home.manageroleOpt();
+		
+		ManageRole  role = new ManageRole(driver);
+		role.createRoleWithoutSelectingRole();
+	}
 	
 }

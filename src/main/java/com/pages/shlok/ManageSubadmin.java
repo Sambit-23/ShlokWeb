@@ -10,12 +10,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Listeners;
 import org.testng.asserts.SoftAssert;
 import com.generics.shlok.AutoConstant;
 import com.generics.shlok.BasePage;
 import com.generics.shlok.ExcelLibrary;
+import com.pages.shlok.*;
 
 public class ManageSubadmin extends BasePage implements AutoConstant
 {
@@ -90,7 +92,6 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 	
 	public void createSubAdminandCheck() throws Exception
 	{
-	
 		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
 		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
 		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
@@ -115,12 +116,28 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 	  }
 	public void viewAllSubAdmin() throws Exception
 	{
+		driver.findElement(By.xpath("(//a[@class='nav-link '])[1]")).click();
+		String el = driver.findElement(By.xpath("//h3[@id='subAdminCount']")).getText();
+		int i = Integer.parseInt(el);
+		
+		Thread.sleep(1000);
+		HomePage home = new HomePage(driver);
+		home.manageSubAdminOpt();
+		
 		pageUpScroll(driver);
-		WebElement name =driver.findElement(By.xpath("//tbody[@id='list-list1']"));
-		String subAdminName = name.getText();
-		Reporter.log(subAdminName);
-	}
+		int pageNo = (i/10)+1;
 	
+		Thread.sleep(1000);
+		pageUpScroll(driver);
+		for (int j = 1; j<=pageNo; j++)
+		{
+			WebElement name =driver.findElement(By.xpath("//tbody[@id='list-list1']"));
+			String subAdminName = name.getText();
+			Reporter.log(subAdminName);
+			driver.findElement(By.xpath("//li[@id='example2_next']")).click();	
+		}
+	}
+
 	public void createSubAdminWithInvalidEmail() throws Exception
 	{
 	
@@ -209,6 +226,177 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		asst.assertEquals(search, result);
 		asst.assertAll();
 	}
+	
+	public void createSubAdminWithoutSelectingBranch() throws Exception
+	{
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 3, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 1, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 9, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 4, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 9, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 3, 2));
+		String search =searchTextfield.getText();
+		WebElement list = driver.findElement(By.xpath("(//tbody[@id='list-list1']//td)[4]"));
+		String result =list.getText();
+		
+		SoftAssert asst = new SoftAssert();
+		asst.assertEquals(search, result);
+		asst.assertAll();
+		
+	}
+	
+	public void createSubAdminWithoutAccessRight() throws Exception
+	{
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		searchTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 2));
+		String search =ExcelLibrary.getcellvalue(SubAdminDetails, 10, 2);
+		
+		WebElement list =driver.findElement(By.xpath("(//tbody[@id='list-list1']//td)[4]"));
+		String result =list.getText();
+		
+		SoftAssert asst = new SoftAssert();
+		asst.assertEquals(search, result);
+		
+		Reporter.log("Sub Admin added Successfully",true);
+		asst.assertAll();
+	  }
+	
+	public void createSubAdminWithoutRole() throws Exception
+	{
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		//SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		
+		String text = selectRoleDropdown.getText();
+		 if (text.contains("Select Role"))
+				 {
+			 		Assert.fail("Select Role is a Mandatory Field");
+				 }
+	}
+	
+	public void createSubAdminWithoutEmail() throws Exception
+	{
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		//contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		
+		String email = contactEmailTextfield.getText();
+		boolean flag = false;
+		
+		if (email.isEmpty())
+		{
+			flag = true;
+		}
+		if(true)
+		{
+			Assert.fail("Email Id text Field is Mandatory");
+		}
+	  }
+	
+	public void createSubAdminWithoutName() throws Exception
+	{
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 2));
+		//nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		
+		String email = nameTextfield.getText();
+		boolean flag = false;
+		
+		if (email.isEmpty())
+		{
+			flag = true;
+		}
+		if(true)
+		{
+			Assert.fail("Name text Field is Mandatory");
+		}
+	  }
+	
+	public void createSubAdminWithoutContactNumber() throws Exception
+	{
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 4));
+		//contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 3));
+		chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		
+		String email = contactNumberTextfield.getText();
+		boolean flag = false;
+		
+		if (email.isEmpty())
+		{
+			flag = true;
+		}
+		if(true)
+		{
+			Assert.fail("Contact Number TextField is Mandatory");
+		}
+	  }
+	
+	public void createSubAdminWithoutImageFile() throws Exception
+	{
+		SelectbyVisibleText(branchNameDropdown,ExcelLibrary.getcellvalue(BranchName, 3, 0));
+		SelectbyVisibleText(selectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 1, 0));
+		SelectbyVisibleText(selectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		contactEmailTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 2));
+		nameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 1));
+		passwordTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 4));
+		contactNumberTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 3));
+		//chooseImageFileLink.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 10, 5));
+		createButton.click();
+		Thread.sleep(1000);
+		
+		String email = chooseImageFileLink.getText();
+		boolean flag = false;
+		
+		if (email.isEmpty())
+		{
+			flag = true;
+		}
+		if(true)
+		{
+			Assert.fail("SubAdmin Image is Mandatory");
+		}
+	  }
+	
 	public void editSubAdminwithValidData() throws Exception
 	{
 		String ExpectedName = ExcelLibrary.getcellvalue(SubAdminDetails, 8, 1);
@@ -260,13 +448,14 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		
 		pageUpScroll(driver);
 		
-		WebElement edit=driver.findElement(By.xpath("//td[.='mperry2323@mail.com']/..//i[@class='fa fa-edit']"));
+		WebElement edit=driver.findElement(By.xpath("(//i[@class='fa fa-edit'])[1]"));
 		
 		Thread.sleep(1000);
 		
 		edit.click();
 		
 		SelectbyVisibleText(editSelectAccessRightDropdown,Access);
+		editUserNameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 11, 1));
 		updateButton.click();
 		Thread.sleep(1000);
 		WebElement el = driver.findElement(By.xpath("//img[@alt='SHLOK']"));
@@ -282,13 +471,14 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		
 		pageUpScroll(driver);
 		
-		WebElement edit=driver.findElement(By.xpath("//td[.='mperry2323@mail.com']/..//i[@class='fa fa-edit']"));
+		WebElement edit=driver.findElement(By.xpath("(//i[@class='fa fa-edit'])[1]"));
 		
 		Thread.sleep(1000);
 		
 		edit.click();
 		
 		SelectbyVisibleText(editSelectAccessRightDropdown,role);
+		editUserNameTextfield.sendKeys(ExcelLibrary.getcellvalue(SubAdminDetails, 11, 1));
 		updateButton.click();
 		Thread.sleep(1000);
 		WebElement el = driver.findElement(By.xpath("//img[@alt='SHLOK']"));
@@ -297,17 +487,45 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 		as.assertEquals("shlok", result);
 		as.assertAll();
 	
+	}
+	
+	public void editSubAdminWithoutUserName() throws Exception
+	{
+		pageUpScroll(driver);
 		
+		WebElement edit=driver.findElement(By.xpath("(//i[@class='fa fa-edit'])[1]"));
+		
+		Thread.sleep(1000);
+		
+		edit.click();
+		
+		SelectbyVisibleText(editSelectAccessRightDropdown, ExcelLibrary.getcellvalue(AccessRights, 2, 0));
+		SelectbyVisibleText(editSelectRoleDropdown, ExcelLibrary.getcellvalue(ManageRole, 1, 0));
+		editUserNameTextfield.clear();
+		updateButton.click();
+		WebElement Username = driver.findElement(By.id("User_Contact_Name1"));
+		String username = Username.getText();
+		boolean flag = false;
+		
+		if (username.isEmpty())
+		{
+			flag = true;
+		}
+		if(true)
+		{
+			Assert.fail("User Name TextField is Mandatory Field");
+		}
+	
 	}
 	public void deactivatointoggle() throws Exception
 	{
 		pageUpScroll(driver);
 		searchTextfield.sendKeys("mperry2323@mail.com");
-		ScrollLeft(driver, activationToggleButton);
+		ScrollToView(driver, activationToggleButton);
 		activationToggleButton.click();
 		Thread.sleep(1000);
 		WebElement edit=driver.findElement(By.xpath("//i[@class='fa fa-edit']"));
-		ScrollLeft(driver, edit);
+		ScrollToView(driver, edit);
 		edit.click();
 		Reporter.log("Deactive Successfully");
 	
@@ -316,11 +534,11 @@ public class ManageSubadmin extends BasePage implements AutoConstant
 	{
 		pageUpScroll(driver);
 		searchTextfield.sendKeys("mperry2323@mail.com");
-		ScrollLeft(driver, activationToggleButton);
+		ScrollToView(driver, activationToggleButton);
 		activationToggleButton.click();
 		Thread.sleep(1000);
 		WebElement edit=driver.findElement(By.xpath("//i[@class='fa fa-edit']"));
-		ScrollLeft(driver, edit);
+		ScrollToView(driver, edit);
 		edit.click();
 		Reporter.log("Active Successfully");
 	}

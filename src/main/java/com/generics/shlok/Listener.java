@@ -16,6 +16,11 @@ public class Listener implements ITestListener
 {
 	public void onTestFailure(ITestResult result)
 	{
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
 		TakesScreenshot ts = (TakesScreenshot)BaseTest.driver;
 		File srcfile =ts.getScreenshotAs(OutputType.FILE);
 		String name=result.getName();
@@ -27,20 +32,25 @@ public class Listener implements ITestListener
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		Reporter.log(result.getMethod().getMethodName()+" is Failed");
+		Reporter.log("Test Case is Fail",true);
+		
 	}
 	public void onTestSuccess(ITestResult result)
 	{
+		Reporter.log(result.getMethod().getMethodName()+" is Passed");
 		Reporter.log("Test case is Pass", true);
-		Reporter.log("Status of Execution -" +result.getStatus());
 	}
 	public void onTestStrat(ITestResult result)
 	{
-		Reporter.log("Method name is -" +result.getName());
+		Reporter.log(result.getTestClass().getName() +" is Started Successfully");
 		Reporter.log("Test is Starting");
 	}
-	public void onTestFail(ITestResult result)
+	public void onTestSkip(ITestResult result)
 	{
-		Reporter.log("TestCase is Fail",true);
+		Reporter.log(result.getMethod().getMethodName()+" is Skipped");
+		Reporter.log("Test case is Skipped");
 	}
-
+	
 }

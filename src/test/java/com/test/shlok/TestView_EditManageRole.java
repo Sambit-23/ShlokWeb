@@ -8,10 +8,10 @@ import com.pages.shlok.LoginPage;
 import com.pages.shlok.ManageRole;
 
 @Listeners(com.generics.shlok.Listener.class)
-public class TestManageRole2 extends BaseTest
+public class TestView_EditManageRole extends BaseTest
 {
-	@Test
-	public void submit() throws Exception
+	@Test(priority=1)
+	public void editWithValidData() throws Exception
 	{
 		LoginPage log=new LoginPage(driver);
 		log.loginmethod();
@@ -20,15 +20,50 @@ public class TestManageRole2 extends BaseTest
 		HomePage home = new HomePage(driver);
 		home.manageroleOpt();
 		
-		ManageRole manage = new ManageRole(driver);
-		manage.Compulsoryfield(driver);
-		manage.AccountModule();
-		manage.TimetableModule();
-		manage.educationalModule();
-		manage.NewsandEventModule();
-		manage.TransportModule();
-		manage.MerchandiseModule();
-		Thread.sleep(1000);
-		manage.uncheckAll();
+		ManageRole role = new ManageRole(driver);
+		role.editRoleWithValidData();
+	}
+	
+	@Test(priority=2)
+	public void editWithoutValidRoleName() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		
+		HomePage home = new HomePage(driver);
+		home.manageroleOpt();
+		
+		ManageRole role = new ManageRole(driver);
+		role.editRoleWithoutRoleName();
+	}
+	
+	@Test(priority=3)
+	public void editWithoutSelectingModule() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		
+		HomePage home = new HomePage(driver);
+		home.manageroleOpt();
+		
+		ManageRole role = new ManageRole(driver);
+		role.editRoleWithoutSelectingModule();
+		//role.deleteRole();
+	}
+	
+	@Test(priority=4)
+	public void deleteRole() throws Exception
+	{
+		LoginPage log=new LoginPage(driver);
+		log.loginmethod();
+		Thread.sleep(2000);
+		
+		HomePage home = new HomePage(driver);
+		home.manageroleOpt();
+		
+		ManageRole role = new ManageRole(driver);
+		role.deleteRole();
 	}
 }

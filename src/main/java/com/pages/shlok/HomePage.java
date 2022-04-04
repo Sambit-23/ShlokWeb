@@ -10,6 +10,9 @@ import com.generics.shlok.BasePage;
 
 public class HomePage extends BasePage implements AutoConstant
 {
+	@FindBy(xpath="(//a[@class='nav-link '])[1]")
+	private WebElement dashboardLink;
+	
 	@FindBy(xpath="(//a[@class='nav-link'])[4]")
 	private WebElement creatBranchLink;
 	
@@ -19,23 +22,29 @@ public class HomePage extends BasePage implements AutoConstant
 	@FindBy(xpath="(//a[@class='nav-link'])[6]")
 	private WebElement manageSubadminLink;
 	
+	@FindBy(xpath="//p[@class='text']")
+	private WebElement logoutLink;
+	
 	public HomePage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
+	
 	public void creatBranchOpt()
 	{
 		creatBranchLink.click();
 	}
-	
 	public void manageroleOpt()
 	{
 		manageroleLink.click();
 	}
-	
 	public void manageSubAdminOpt()
 	{
 		manageSubadminLink.click();
-		
+	}
+	public void logoutMethod()
+	{
+		logoutLink.click();
+		alertOK(driver);
 	}
 }
