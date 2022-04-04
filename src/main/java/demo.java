@@ -1,13 +1,26 @@
 
+import java.time.Clock;
+import java.time.Duration;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.graphbuilder.math.func.Function;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class demo {
 
+	
 	public static void main(String[] args) throws Exception 
 	{
 		//String email = "mperry2323@mail.com";
@@ -19,23 +32,40 @@ public class demo {
 		d.findElement(By.id("Password")).sendKeys("admin@123");
 		d.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(1000);
-
-		d.findElement(By.xpath("(//a[@class='nav-link'])[6]")).click();
-		Thread.sleep(2000);
-		JavascriptExecutor js = (JavascriptExecutor)d;
-		//WebElement ele=d.findElement(By.xpath("//div[@class=' table-responsive']"));
-		js.executeScript("window.scrollBy(0,800)");
-		js.executeScript("document.querySelector(scroll).scrollLeft=1000");
+		d.findElement(By.xpath("(//a[@class='nav-link'])[5]")).click();
 		Thread.sleep(1000);
+		JavascriptExecutor js = (JavascriptExecutor)d;
+		js.executeScript("window.scrollBy(0,1000)");
+		d.findElement(By.xpath("//select[@name='branch']"));
+		Thread.sleep(1000);
+		List <WebElement> role =d.findElements(By.xpath("//h5[@class='card-header']"));
+		String xpath = "";
+				for (int i =1; i< role.size();i++)
+				{
+					String rol = role.get(i).getText();
+					System.out.print(rol);
+					if(role.get(i).getText().equalsIgnoreCase("principal"));
+				      {
+				    	  xpath = "(//i[@class='fa fa-edit pull-right'])" + "["+ i +"]";
+					    break ;
+					}
+				}
+				d.findElement(By.xpath(xpath)).click();
+		
+		
 //		Thread.sleep(1000);
 //		JavascriptExecutor js1 = (JavascriptExecutor)d;
 //		js1.executeScript("window.scrollBy(2000,0)");
-		WebElement element = d.findElement(By.xpath("//td[.='mperry2323@mail.com']/..//span[@class='onoffswitch-inner']"));
-		
-		element.click();
+//		WebElement element = d.findElement(By.xpath("//td[.='mperry2323@mail.com']/..//span[@class='onoffswitch-inner']"));
+//		
+//		element.click();
 //		WebElement br=d.findElement(By.xpath("(//input[@name='image'])[1]"));
 //		br.sendKeys("D:\\Shlok Docs\\Teacher Details\\Teacher\\MzE5NzYuanBn.jpg");
-//	
+//		
+		
+		
+		
+				  
 //		WebDriverWait wait= new WebDriverWait(d, 15);
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@class='fa fa-edit'])[1]")));
 //		WebElement scroll = d.findElement(By.xpath("(//i[@class='fa fa-edit'])[1]"));
@@ -57,6 +87,7 @@ public class demo {
 //				System.out.println(list.get(j).getText());
 //				el.click();
 //			}
+//	
 //		}
-}
+		}
 }
