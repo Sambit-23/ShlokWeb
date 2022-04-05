@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>TestNG:  TestDashboard</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>TestDashboard</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Apr 05 17:33:17 IST 2022</td>
+</tr>
+<tr><td>Total time:</td><td>300 seconds (300466 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.shlok.TestDashBoard.fetchModule()'><b>fetchModule</b><br>Test class: com.test.shlok.TestDashBoard<br/>
+<a href="#Output-993208674" onClick='toggleBox("Output-993208674", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-993208674" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-993208674">
+Login is Successful<br/>
+                Manage Roles
+Manage Sub-Admin
+               <br/>
+<br/>
+                Manage Class Timetable
+               <br/>
+                Manage Branch
+Manage Student
+Manage Class/Section
+Manage Subject
+Manage Teacher
+Manage Attendance
+Manage Exam
+Manage Protocols
+Manage Notification
+Digital Library
+Permission Forms
+               <br/>
+                Manage Event
+Manage Gallery
+Manage Achievements
+Manage Representatives
+Manage Holidays
+Manage Newsletter
+               <br/>
+                Manage Trasport
+               <br/>
+fetchModule is Passed<br/>
+Test case is Pass<br/>
+</div>
+</td>
+<td></td>
+<td>31</td>
+<td>com.test.shlok.TestDashBoard@6ae5aa72</td></tr>
+<tr>
+<td title='com.test.shlok.TestDashBoard.upcomingEvents()'><b>upcomingEvents</b><br>Test class: com.test.shlok.TestDashBoard<br/>
+<a href="#Output-1112560756" onClick='toggleBox("Output-1112560756", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1112560756" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1112560756">
+Login is Successful<br/>
+Please select a branch<br/>
+upcomingEvents is Passed<br/>
+Test case is Pass<br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>com.test.shlok.TestDashBoard@6ae5aa72</td></tr>
+<tr>
+<td title='com.test.shlok.TestDashBoard.dashBoardCounts()'><b>dashBoardCounts</b><br>Test class: com.test.shlok.TestDashBoard<br/>
+<a href="#Output-620261614" onClick='toggleBox("Output-620261614", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-620261614" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-620261614">
+Login is Successful<br/>
+The total number of Branch is : 8<br/>
+The total number of Sub-Admins are : 17<br/>
+The total number of Teachers are : 9<br/>
+The total number of Students are : 29<br/>
+dashBoardCounts is Passed<br/>
+Test case is Pass<br/>
+</div>
+</td>
+<td></td>
+<td>31</td>
+<td>com.test.shlok.TestDashBoard@6ae5aa72</td></tr>
+<tr>
+<td title='com.test.shlok.TestDashBoard.recentNotification()'><b>recentNotification</b><br>Test class: com.test.shlok.TestDashBoard<br/>
+<a href="#Output-818209618" onClick='toggleBox("Output-818209618", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-818209618" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-818209618">
+Login is Successful<br/>
+Apr 5
+Route of Rohith was changed
+
+Apr 5
+Section of Jeeyan was changed
+
+Apr 5
+Vietnamese was added for Jeeyan of 1st Standard
+
+Apr 5
+Sumith from 1st Standard was removed from the GIS-School-Route
+
+Apr 5
+Status of Sumith from 1st Standard has been Activated<br/>
+recentNotification is Passed<br/>
+Test case is Pass<br/>
+</div>
+</td>
+<td></td>
+<td>7</td>
+<td>com.test.shlok.TestDashBoard@6ae5aa72</td></tr>
+<tr>
+<td title='com.test.shlok.TestDashBoard.selectBranchAndFetchDashboardDetails()'><b>selectBranchAndFetchDashboardDetails</b><br>Test class: com.test.shlok.TestDashBoard<br/>
+<a href="#Output-1087279177" onClick='toggleBox("Output-1087279177", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1087279177" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1087279177">
+Login is Successful<br/>
+The total number of Branch is : <br/>
+The total number of Sub-Admins are : 2<br/>
+The total number of Teachers are : 6<br/>
+The total number of Students are : 15<br/>
+Apr 5
+Route of Rohith was changed
+
+Apr 5
+Section of Jeeyan was changed
+
+Apr 5
+Vietnamese was added for Jeeyan of 1st Standard
+
+Apr 5
+Sumith from 1st Standard was removed from the GIS-School-Route
+
+Apr 5
+Status of Sumith from 1st Standard has been Activated<br/>
+No Upcoming Events Found<br/>
+                Manage Roles
+Manage Sub-Admin
+               <br/>
+                Manage Fee
+Fundrasier
+               <br/>
+                Manage Class Timetable
+               <br/>
+                Manage Branch
+Manage Student
+Manage Class/Section
+Manage Subject
+Manage Teacher
+Manage Attendance
+Manage Exam
+Manage Protocols
+Manage Notification
+Digital Library
+Permission Forms
+               <br/>
+                Manage Event
+Manage Gallery
+Manage Achievements
+Manage Representatives
+Manage Holidays
+Manage Newsletter
+               <br/>
+                Manage Trasport
+               <br/>
+selectBranchAndFetchDashboardDetails is Passed<br/>
+Test case is Pass<br/>
+</div>
+</td>
+<td></td>
+<td>16</td>
+<td>com.test.shlok.TestDashBoard@6ae5aa72</td></tr>
+</table><p>
+</body>
+</html>

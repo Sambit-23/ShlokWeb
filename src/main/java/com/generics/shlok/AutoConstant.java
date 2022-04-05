@@ -1,6 +1,6 @@
 package com.generics.shlok;
 
-public interface AutoConstant 
+public interface AutoConstant
 {
 	String url = "https://shlokqa.surebotdev.com/customroles/";
 	String excel_path = "./testdata/ShlokAdmin.xlsx";
